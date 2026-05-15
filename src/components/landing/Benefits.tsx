@@ -1,34 +1,30 @@
-import { Activity, Users, Zap, Repeat } from "lucide-react";
+import { Activity, Smile, ShieldCheck, HeartHandshake, Sparkles } from "lucide-react";
 
 const list = [
-  { icon: Activity, title: "Mais saúde", text: "Movimento regular previne obesidade e problemas articulares." },
-  { icon: Users, title: "Socialização", text: "Convivência saudável com pessoas, sons e outros cães." },
-  { icon: Zap, title: "Gasta energia", text: "Menos ansiedade, menos latido, menos estrago em casa." },
-  { icon: Repeat, title: "Rotina previsível", text: "Cachorro com rotina é cachorro mais equilibrado." },
+  { icon: Activity, title: "Mais saúde e qualidade de vida" },
+  { icon: Smile, title: "Cachorro mais calmo e equilibrado" },
+  { icon: ShieldCheck, title: "Segurança com um profissional capacitado" },
+  { icon: HeartHandshake, title: "Mais tranquilidade no seu dia a dia" },
+  { icon: Sparkles, title: "Estímulos físicos e mentais todos os dias" },
 ];
 
 export function Benefits() {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-muted/60 py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-[Poppins] text-3xl font-bold text-foreground md:text-4xl">
-            O que muda na vida do seu cachorro
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-[Poppins] text-3xl font-bold text-primary md:text-4xl">
+            Benefícios para o <span className="text-accent">seu cachorro</span> e{" "}
+            <span className="text-accent">para você</span>
           </h2>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {list.map(({ icon: Icon, title, text }) => (
-            <div
-              key={title}
-              className="flex items-start gap-4 rounded-3xl border border-border bg-card p-6"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/15 text-accent">
-                <Icon size={22} />
+        <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+          {list.map(({ icon: Icon, title }) => (
+            <div key={title} className="flex flex-col items-center text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full text-accent">
+                <Icon size={36} strokeWidth={1.5} />
               </div>
-              <div>
-                <h3 className="font-[Poppins] text-lg font-semibold text-foreground">{title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{text}</p>
-              </div>
+              <p className="mt-3 max-w-[10rem] text-xs font-medium text-foreground">{title}</p>
             </div>
           ))}
         </div>

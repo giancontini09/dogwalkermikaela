@@ -6,6 +6,7 @@ import { Solution } from "@/components/landing/Solution";
 import { Differentials } from "@/components/landing/Differentials";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Benefits } from "@/components/landing/Benefits";
+import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
@@ -38,10 +39,11 @@ function Index() {
         <Problem />
         <Solution />
         <Differentials />
-        <HowItWorks />
         <Benefits />
-        <FAQ />
+        <HowItWorks />
+        <Testimonials />
         <FinalCTA />
+        <FAQ />
       </main>
       <Footer />
       <WhatsAppFloat />
