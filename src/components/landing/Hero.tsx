@@ -1,49 +1,51 @@
-import { MessageCircle, MapPin, PawPrint } from "lucide-react";
+import { MessageCircle, ShieldCheck, PawPrint } from "lucide-react";
 import { WHATSAPP_URL } from "./whatsapp";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-muted to-background">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-24">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            <MapPin size={14} /> Atendimento exclusivo em Higienópolis
+    <section id="inicio" className="relative overflow-hidden bg-background">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
+        <div className="relative z-10">
+          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-primary">
+            <PawPrint size={14} /> DOG WALKER EM HIGIENÓPOLIS
           </span>
-          <h1 className="mt-4 font-[Poppins] text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
-            Passeios seguros e <span className="text-primary">felizes</span> para o seu cachorro
+          <h1 className="mt-5 font-[Poppins] text-4xl font-bold leading-[1.05] text-primary md:text-5xl lg:text-6xl">
+            Passeios seguros
+            <br />
+            e <span className="text-foreground">cheios de carinho</span>
+            <br />
+            <span className="text-foreground">para o seu cachorro</span>
+            <br />
+            <span className="text-foreground">em Higienópolis</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-            Cuido do seu melhor amigo como se fosse meu. Atenção total, rotina pensada para ele e
-            tranquilidade pra você — direto no bairro Higienópolis.
+          <p className="mt-5 max-w-md text-base text-muted-foreground">
+            Mais que passeios, ofereço cuidado profissional, atenção individual e bem-estar para o
+            seu melhor amigo.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:opacity-90"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:opacity-90"
             >
               <MessageCircle size={18} />
               Falar no WhatsApp
             </a>
-            <a
-              href="#como-funciona"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background px-6 py-3 text-base font-semibold text-foreground transition hover:bg-muted"
-            >
-              Como funciona
-            </a>
+          </div>
+          <div className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <ShieldCheck size={16} className="text-primary" />
+            Atendimento em Higienópolis e bairros próximos
           </div>
         </div>
 
         <div className="relative">
-          <div className="aspect-square w-full overflow-hidden rounded-3xl bg-muted shadow-xl">
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-              <PawPrint className="text-primary/50" size={120} />
+          <div className="absolute -right-6 -top-6 h-44 w-44 rounded-full bg-accent/30 blur-2xl" />
+          <div className="absolute -bottom-8 -left-8 h-56 w-56 rounded-full bg-primary/30 blur-3xl" />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-primary/25 via-primary/10 to-accent/25 shadow-xl">
+            <div className="flex h-full w-full items-center justify-center">
+              <PawPrint className="text-primary/50" size={140} />
             </div>
-          </div>
-          <div className="absolute -bottom-4 -left-4 hidden rounded-2xl bg-background p-4 shadow-lg sm:block">
-            <p className="text-xs font-medium text-muted-foreground">Passeios desde</p>
-            <p className="font-[Poppins] text-2xl font-bold text-primary">30 min</p>
           </div>
         </div>
       </div>

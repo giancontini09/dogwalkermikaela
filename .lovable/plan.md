@@ -1,46 +1,53 @@
-## Landing Page — Dog Walker Higienópolis
+## Objetivo
+Alinhar a landing existente ao mockup enviado ("Passeios com Cuidado — Dog Walker"), mantendo a paleta roxo + laranja, tipografia Poppins/Inter e CTAs para WhatsApp.
 
-Single-page de conversão, mobile-first, com foco em levar o visitante para o WhatsApp.
+## Mudanças por seção
 
-### Estrutura da página (uma rota só: `/`)
+### Header
+- Renomear marca para **"Passeios com Cuidado"** com sublinha "DOG WALKER".
+- Adicionar nav desktop: Início, Sobre, Como funciona, Depoimentos, Perguntas, Contato (links âncora com scroll suave; colapsa no mobile).
+- Manter botão laranja "Falar no WhatsApp" à direita.
 
-Página única com rolagem suave entre seções (âncoras internas), pois o objetivo é conversão direta no WhatsApp — não há conteúdo independente para virar páginas separadas.
+### Hero
+- Badge "DOG WALKER EM HIGIENÓPOLIS".
+- Título em 4 linhas como no mockup: "Passeios seguros e cheios de carinho para o seu cachorro em Higienópolis" (com "cheios de carinho" em roxo).
+- Subtítulo curto + CTA laranja "Falar no WhatsApp" + selo "Atendimento em Higienópolis e bairros próximos".
+- Lado direito: card com placeholder de foto (proporção retrato), com formas orgânicas roxas/laranjas atrás (blobs decorativos) — sem foto real ainda.
 
-1. **Header fixo** — logo "Dog Walker Higienópolis" + botão WhatsApp laranja sempre visível.
-2. **Hero** — título "Passeios seguros e felizes para o seu cachorro em Higienópolis", subtítulo, CTA laranja "Falar no WhatsApp", imagem placeholder do walker com cachorro.
-3. **Problema** — 3 dores comuns do tutor (pouco tempo, cachorro entediado, insegurança com desconhecidos).
-4. **Solução** — apresentação do serviço com 3–4 cards (passeios individuais/duplas, horário flexível, relatório pós-passeio, região exclusiva Higienópolis).
-5. **Diferenciais** — bloco com ícones: morador da região, experiência com cães, atenção total, comunicação direta pelo WhatsApp.
-6. **Como funciona** — 3 passos: 1) chama no WhatsApp 2) combina rotina 3) cachorro feliz.
-7. **Benefícios para o cachorro** — lista visual (saúde, socialização, gasto de energia, rotina).
-8. **FAQ** — accordion com 5–6 perguntas (preço, raças, chuva, chaves, seguro, horários).
-9. **CTA final** — bloco roxo grande com "Vamos combinar o primeiro passeio?" + botão laranja.
-10. **Footer** — região de atendimento, WhatsApp, ano.
-11. **Botão WhatsApp flutuante** — canto inferior direito, sempre visível.
+### Problem (rotina)
+- Reformatar para layout assimétrico: bloco de texto à esquerda + 3 colunas finas à direita com ícone roxo e descrição curta (tempo / tédio / segurança), separadas por linhas verticais sutis — como na referência.
 
-Todos os botões e o flutuante apontam para:
-`https://wa.me/5511990267029?text=Oi%20vim%20pelo%20site%20e%20quero%20saber%20sobre%20dog%20walker`
+### Solution → "Passeios personalizados com foco em segurança e bem-estar"
+- 4 cards brancos em grid (Passeios individuais, Região Higienópolis, Rotina com responsabilidade, Relatórios do passeio).
+- Ícones em círculos alternando roxo/laranja sólido com ícone branco (não fundo translúcido).
 
-### Design system
+### Differentials → "Meu diferencial" (faixa roxa)
+- Substituir grid atual por seção full-width com fundo roxo, foto à esquerda em moldura arredondada, título "Profissionalismo que traz tranquilidade para você" + subtítulo, e 3 "chips" brancos com ícone (Cursos e capacitações, Estudos em comportamento, Amor e paciência).
 
-- Cores: primária `#5B3CC4`, secundária `#3A2A8F`, destaque `#FF7A00`, fundo `#FFFFFF`, neutro `#F5F5F7`.
-- Tipografia: Poppins (títulos), Inter (texto) — via Google Fonts.
-- Estilo: cantos arredondados generosos, bastante espaço em branco, ícones lineares (lucide-react), sombras suaves.
-- Mobile-first; CTA laranja sempre acessível (header + flutuante).
+### Benefits → "Benefícios para o seu cachorro e para você"
+- Mudar para fileira horizontal de 5 itens com ícones de linha (saúde, calma, segurança, tranquilidade, estímulos), texto curto centralizado, sem cards.
 
-### Imagens
+### HowItWorks
+- Expandir para 4 passos numerados (1 WhatsApp → 2 Entendemos a rotina → 3 Agendamos → 4 Você acompanha) com setas entre eles, ícones em círculo laranja/roxo alternando.
 
-Placeholders cinza com ícone (sem stock genérico de banco de imagens). Substituição por fotos reais fica para etapa futura, quando você enviar.
+### Nova seção: Depoimentos
+- Título "O que os clientes dizem" + 3 cards brancos com aspas roxas, texto, avatar placeholder e nome (Juliana M., Rafael S., Camila T.).
 
-### Integrações nesta entrega
+### Final CTA
+- Manter, mas ajustar para faixa horizontal laranja com texto à esquerda e botão branco à direita, conforme mockup.
 
-- Botão WhatsApp flutuante e CTAs com link pré-preenchido.
-- Google Analytics e Google Maps **não** entram agora (adicionados depois com seus IDs).
+### FAQ
+- Manter accordion, mas em grid 2 colunas no desktop com 6 perguntas (em quais bairros, duração, individuais, cachorro agitado, segurança, pagamento).
 
-### Detalhes técnicos
+### Footer
+- Reestruturar em 4 colunas: marca + descrição + ícones sociais; **Atendimento** (Higienópolis e bairros próximos + lista: Santa Cecília, Consolação, Perdizes, Pacaembu, Bela Vista, Sumaré); **Contato** (WhatsApp, e-mail placeholder, Instagram); decoração de patinha à direita + frase "Seu cachorro merece o melhor passeio!".
+- Copyright centralizado no rodapé.
 
-- Tudo em `src/routes/index.tsx` + componentes em `src/components/landing/` (Hero, Problem, Solution, Differentials, HowItWorks, Benefits, FAQ, FinalCTA, Footer, WhatsAppFloat, Header).
-- Tokens de cor adicionados em `src/styles.css` (variáveis oklch para primary/accent) e fontes importadas no `__root.tsx`.
-- `head()` da rota com title, description e OG tags em PT-BR para SEO.
-- FAQ usa `components/ui/accordion`; botões usam `components/ui/button` com variante laranja.
-- Rolagem suave via `scroll-behavior: smooth` no html.
+## Detalhes técnicos
+- Sem novas dependências; só `lucide-react` já presente.
+- Continuar usando tokens semânticos (`primary`, `accent`, `muted`, `card`, `foreground`) — sem hex hardcoded em componentes.
+- Adicionar gradiente/blobs decorativos via `::before`/divs absolutas com `bg-primary/20 blur-3xl` para o hero.
+- Novo componente `src/components/landing/Testimonials.tsx`; demais arquivos editados in-place.
+- Âncoras: `#inicio`, `#sobre` (Differentials), `#como-funciona`, `#depoimentos`, `#perguntas`, `#contato` (footer).
+- Mobile-first preservado; nav vira menu hambúrguer simples (sheet do shadcn ou disclosure leve).
+- Imagens permanecem placeholders (blocos com gradiente + ícone).

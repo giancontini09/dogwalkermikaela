@@ -7,50 +7,62 @@ import {
 
 const faqs = [
   {
-    q: "Quanto custa um passeio?",
-    a: "O valor depende da duração e da frequência semanal. Me chama no WhatsApp que monto um plano sob medida.",
+    q: "Em quais bairros você atende?",
+    a: "Atendo principalmente Higienópolis e bairros próximos como Santa Cecília, Consolação, Perdizes, Pacaembu, Bela Vista e Sumaré.",
   },
   {
-    q: "Atende todas as raças e portes?",
-    a: "Sim — de filhotes socializados a cães idosos, pequenos, médios e grandes. Avalio caso a caso.",
+    q: "Quanto tempo dura cada passeio?",
+    a: "Os passeios duram entre 30 e 60 minutos, conforme a necessidade e energia do seu cachorro.",
   },
   {
-    q: "E se chover?",
-    a: "Em chuva forte, reagendo o passeio ou faço uma atividade leve dentro do prédio, combinado com você.",
+    q: "Os passeios são individuais?",
+    a: "Sim. O padrão é individual. Quando há cães compatíveis, podem sair em duplas — sempre com seu consentimento.",
   },
   {
-    q: "Como pego o cachorro? Preciso deixar chave?",
-    a: "Combinamos com a portaria do prédio ou recebo a chave/cópia com total responsabilidade e discrição.",
+    q: "E se meu cachorro for muito agitado?",
+    a: "Sem problema. Faço uma apresentação calma e respeito o tempo dele. Tenho experiência com cães ansiosos e cheios de energia.",
   },
   {
-    q: "Quantos cachorros andam juntos?",
-    a: "Grupos pequenos e cuidadosamente formados. Se o seu prefere passeio individual, sem problema.",
+    q: "Como é feita a segurança durante os passeios?",
+    a: "Uso guias e peitorais adequados, escolho rotas seguras e monitoro o comportamento dele a cada momento.",
   },
   {
-    q: "Em quais horários você atende?",
-    a: "Manhã, tarde e início da noite, de segunda a sábado. Confirmamos a janela ideal pelo WhatsApp.",
+    q: "Como funciona o pagamento?",
+    a: "Combinamos pacotes semanais ou mensais. Pagamento via Pix, com flexibilidade conforme a sua rotina.",
   },
 ];
 
 export function FAQ() {
   return (
-    <section className="bg-muted py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="text-center">
-          <h2 className="font-[Poppins] text-3xl font-bold text-foreground md:text-4xl">
-            Perguntas frequentes
+    <section id="perguntas" className="bg-background py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-[Poppins] text-3xl font-bold text-primary md:text-4xl">
+            Perguntas <span className="text-accent">frequentes</span>
           </h2>
         </div>
-        <Accordion type="single" collapsible className="mt-10 rounded-3xl bg-card p-2 shadow-sm">
-          {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={`item-${i}`} className="px-4">
-              <AccordionTrigger className="text-left font-[Poppins] text-base font-semibold">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-            </AccordionItem>
+        <div className="mt-10 grid grid-cols-1 gap-x-8 md:grid-cols-2">
+          {[0, 1].map((col) => (
+            <Accordion key={col} type="single" collapsible className="w-full">
+              {faqs
+                .filter((_, i) => i % 2 === col)
+                .map((f) => (
+                  <AccordionItem
+                    key={f.q}
+                    value={f.q}
+                    className="my-2 rounded-2xl border border-border bg-card px-4"
+                  >
+                    <AccordionTrigger className="text-left text-sm font-semibold text-foreground hover:no-underline">
+                      {f.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground">
+                      {f.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+            </Accordion>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
